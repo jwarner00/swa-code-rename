@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const newParams = new URLSearchParams();
+            for (const param of urlParams.entries()) {
+                newParams.append("_" + param[0], param[1]);
+            }
+
+            const redirectUrl = `/api/login/callback?${newParams.toString()}`;
+            document.location.href = redirectUrl;
+        }
+        catch (error) {
+            document.location.href = "/";
+        }
+    </script>
+</head>
+
+<body>
+    <p>Logging you in... </p>
+</body>
+
+</html>
